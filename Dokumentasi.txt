@@ -12,3 +12,4 @@ import file.db ke database phpmyadmin
 6 >> uname: dani pass: joko123456
 
 update
+update lagi
