@@ -1,0 +1,12 @@
+Note:
+pastikan sudah install python versi 10++
+pastikan sudah terinstall pip python installer
+pastikan sudah install Xampp
+import file.db ke database phpmyadmin
+
+1 >> install Django >> buka cmd >> pip install Django==4.2.1
+2 >> Buat apps django >> buka cmd dan arahkan ke folder >> django-admin startproject PrettyCashWeb
+3 >> Buat app baru di dalam django >> django-admin startapp about
+4 >> Buat app baru di dalam django >> django-admin startapp blog
+5 >> Untuk run sever lokal >> python manage.py runserver
+6 >> uname: dani pass: joko123456
