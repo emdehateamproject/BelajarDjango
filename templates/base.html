@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+
+    <link rel="stylesheet" href="{% static 'css/sb-admin-2.min.css' %}">
+</head>
+<body>
+    <nav  class="navbar navbar-expand navbar-dark bg-warning topbar mb-4 static-top shadow">
+        <header>
+            <ul  class="navbar-nav ml-auto">
+                <!-- Nav Item - User Information -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}" id="userDropdown"> Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog' %}" id="userDropdown"> About </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}" id="userDropdown"> Contact </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}" id="userDropdown"> Login </a>
+                </li>
+            </ul>
+        </header>
+    </nav>
+    <div class="container-fluid">
+        {% block content %}
+    
+        {% endblock %}
+    </div>
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white position-static">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2023</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    
+</body>
+<script src="{% static 'js/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+</html>

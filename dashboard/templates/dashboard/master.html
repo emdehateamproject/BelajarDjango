@@ -1,0 +1,87 @@
+{% extends 'base-dashboard.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-12 col-md-6 mb-2">
+            <div class="card">
+                <div class="card-header">
+                    <p class="mt-2 text-center mx-auto text-dark h3"><b>Data</b></p>
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered table-responsive-sm" id="dataTable" width="100%" cellspacing="0">
+                        <a href="{% url 'create' %}" type="button" class="btn btn-success btn-lg btn-sm d-lg-inline mb-4">Add Data</a>
+                        <thead>
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Activity</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for data in dokumen %}
+                            <tr>
+                                <td class="text-center">{{ data.no }}</td>
+                                <td>{{ data.name }}</td>
+                                <td>{{ data.date }}</td>
+                                <td>{{ data.activity }}</td>
+                                <td>{{ data.quantity }}</td>
+                                <td class="text-center">
+                                    {% if data.img_file %}
+                                        <img class="img-fluid text-center align-middle img-profile rounded" style="max-width: 100%; height: auto;"  src="{{data.img_file.url}}" width="120" alt="{{data.img_file.url}}">
+                                    {% endif %}
+                                </td>
+                                <td class="text-center align-middle">
+                                    <a href="{% url 'update' data.id %}" class="btn btn-warning btn-md btn-sm" >Edit</a>
+                                    <a href="#" class="btn btn-danger btn-md btn-sm"  data-toggle="modal" data-target="#deleteModal">Delete</a>
+                                </td>
+                            </tr>
+                            <!-- Logout Modal-->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Select "Delete" below if you are ready to <b>Drop Data</b>.</div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                            <a class="btn btn-primary" href="{% url 'delete' data.id %}">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            
+                            <tr>
+                                <th class="text-center">Number</th>
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Date</th>
+                                <th class="text-center">Activity</th>
+                                <th class="text-center">Quantity</th>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                           
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

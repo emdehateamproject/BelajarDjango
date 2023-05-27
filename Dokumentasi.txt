@@ -10,3 +10,5 @@ import file.db ke database phpmyadmin
 4 >> Buat app baru di dalam django >> django-admin startapp blog
 5 >> Untuk run sever lokal >> python manage.py runserver
 6 >> uname: dani pass: joko123456
+
+update

@@ -1,0 +1,32 @@
+{% extends 'base-dashboard.html' %}
+{% block content %}
+    <div class="row justify-content-center mb-4 mx-auto">
+        <div class=" col-lg-8 col-sm-12 d-flex justify-content-center">
+            <div class="card">
+                <div class="card-header bg-dark">
+                    <p class="text h4 text-white text-center"><b>Settings</b></p>
+                </div>
+                <div class="card-body">
+                    <table class="table text-middle item-middle">
+                        <tr>
+                            <th>Account Created</th>
+                            <td>:</td>
+                            <td>{{ request.user.date_joined }}</td>
+                        </tr>
+                        <tr>
+                            <th>Policy</th>
+                            <td>:</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptate, soluta ad excepturi dolorum ea quo? Repudiandae aliquid, vel veniam tempora, distinctio iusto ex, enim non laborum illo placeat atque!</td>
+                        </tr>
+                        <tr>
+                            <th>App Version</th>
+                            <td>:</td>
+                            <td><b>1.0.0</b></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

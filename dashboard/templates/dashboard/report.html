@@ -1,0 +1,31 @@
+{% extends 'base-dashboard.html' %}
+{% block content %}
+{% load static %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- chart -->
+        <!-- Content Row -->
+        <div class="row">
+
+            <div class="col-xl-12 col-lg-7">
+
+                <!-- Area Chart -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold h2">Report</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-area">
+                            <canvas id="myAreaChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+{% endblock %}
